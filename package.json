@@ -1,0 +1,54 @@
+{
+  "name": "go-external-libraries",
+  "displayName": "Go External Libraries",
+  "description": "Browse Go SDK and module dependency sources in Explorer.",
+  "version": "0.0.1",
+  "publisher": "mooonfly",
+  "author": "mooonfly",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mooonfly/go-external-libraries.git"
+  },
+  "homepage": "https://github.com/mooonfly/go-external-libraries#readme",
+  "bugs": { "url": "https://github.com/mooonfly/go-external-libraries/issues" },
+  "icon": "images/icon.png",
+  "keywords": ["go", "golang", "dependencies", "modules", "libraries"],
+  "license": "MIT",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "main": "./src/extension.js",
+  "extensionKind": ["workspace"],
+  "activationEvents": ["onStartupFinished"],
+  "capabilities": { "untrustedWorkspaces": { "supported": false } },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/extension.js && node --check src/modules.js",
+    "vscode:prepublish": "npm run check && npm test",
+    "package": "npm exec --yes --package=@vscode/vsce -- vsce package"
+  },
+  "contributes": {
+    "views": { "explorer": [{ "id": "goExternalLibraries", "name": "External Libraries", "when": "goExternalLibraries.hasGoProject" }] },
+    "commands": [
+      { "command": "goExternalLibraries.revealInProject", "title": "Project: Reveal Active File", "icon": "$(go-to-file)" },
+      { "command": "goExternalLibraries.reveal", "title": "External Libraries: Reveal Active File", "icon": "$(go-to-file)" },
+      { "command": "goExternalLibraries.refresh", "title": "External Libraries: Refresh", "icon": "$(refresh)" },
+      { "command": "goExternalLibraries.download", "title": "External Libraries: Download Missing Modules", "icon": "$(cloud-download)" }
+    ],
+    "menus": { "view/title": [
+      { "command": "goExternalLibraries.revealInProject", "when": "view == workbench.explorer.fileView", "group": "navigation@0" },
+      { "command": "goExternalLibraries.reveal", "when": "view == goExternalLibraries", "group": "navigation" },
+      { "command": "goExternalLibraries.refresh", "when": "view == goExternalLibraries", "group": "navigation" },
+      { "command": "goExternalLibraries.download", "when": "view == goExternalLibraries", "group": "navigation" }
+    ] },
+    "configuration": {
+      "title": "Go External Libraries",
+      "properties": {
+        "goExternalLibraries.autoReveal": { "type": "boolean", "default": true, "description": "Automatically reveal the active dependency or SDK source file without moving keyboard focus. Also requires explorer.autoReveal to be enabled. Manual reveal is always available." },
+        "goExternalLibraries.goPath": { "type": "string", "default": "go", "description": "Go executable path (not a shell command)." },
+        "goExternalLibraries.showIndirect": { "type": "boolean", "default": true, "description": "Show indirect dependencies." },
+        "goExternalLibraries.showSdk": { "type": "boolean", "default": true, "description": "Show Go SDK source." },
+        "goExternalLibraries.timeout": { "type": "number", "default": 60000, "minimum": 1000, "description": "Go command timeout in milliseconds." }
+      }
+    }
+  }
+}
