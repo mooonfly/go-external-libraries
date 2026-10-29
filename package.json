@@ -1,6 +1,6 @@
 {
-  "name": "go-external-libraries",
-  "displayName": "Go External Libraries",
+  "name": "golang-extenal-libraries",
+  "displayName": "Golang External Libraries",
   "description": "Browse Go SDK and module dependency sources in Explorer.",
   "version": "0.0.1",
   "publisher": "mooonfly",
@@ -41,7 +41,7 @@
       { "command": "goExternalLibraries.download", "when": "view == goExternalLibraries", "group": "navigation" }
     ] },
     "configuration": {
-      "title": "Go External Libraries",
+      "title": "Golang External Libraries",
       "properties": {
         "goExternalLibraries.autoReveal": { "type": "boolean", "default": true, "description": "Automatically reveal the active dependency or SDK source file without moving keyboard focus. Also requires explorer.autoReveal to be enabled. Manual reveal is always available." },
         "goExternalLibraries.goPath": { "type": "string", "default": "go", "description": "Go executable path (not a shell command)." },

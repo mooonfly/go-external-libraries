@@ -1,4 +1,4 @@
-# Go External Libraries
+# Golang External Libraries
 
 [简体中文](README.zh-CN.md)
 
@@ -29,7 +29,7 @@ Build a VSIX from this repository:
 npm run package
 ```
 
-In VS Code, open the Extensions view, choose **Install from VSIX…** from its menu, and select the generated file. The extension ID is `mooonfly.go-external-libraries`.
+In VS Code, open the Extensions view, choose **Install from VSIX…** from its menu, and select the generated file. The extension ID is `mooonfly.golang-extenal-libraries`.
 
 ## Usage
 
@@ -90,7 +90,7 @@ Packaging automatically runs syntax checks and tests. The tests require a local 
 
 ## Contributing
 
-Bug reports and pull requests are welcome. When reporting an issue, include your VS Code and Go versions, workspace layout, and relevant messages from the **Go External Libraries** output channel.
+Bug reports and pull requests are welcome. When reporting an issue, include your VS Code and Go versions, workspace layout, and relevant messages from the **Golang External Libraries** output channel.
 
 [Report an issue](https://github.com/mooonfly/go-external-libraries/issues)
 

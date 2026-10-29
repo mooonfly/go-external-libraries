@@ -1,4 +1,4 @@
-# Go External Libraries
+# Golang External Libraries
 
 [English](README.md)
 
@@ -29,7 +29,7 @@
 npm run package
 ```
 
-在 VS Code 扩展面板菜单中选择 **Install from VSIX…**，安装生成的文件。扩展 ID 为 `mooonfly.go-external-libraries`。
+在 VS Code 扩展面板菜单中选择 **Install from VSIX…**，安装生成的文件。扩展 ID 为 `mooonfly.golang-extenal-libraries`。
 
 ## 使用
 
@@ -90,7 +90,7 @@ npm run package
 
 ## 参与贡献
 
-欢迎提交问题和 Pull Request。报告问题时，请提供 VS Code 和 Go 版本、工作区目录结构，以及 **Go External Libraries** 输出面板中的相关日志。
+欢迎提交问题和 Pull Request。报告问题时，请提供 VS Code 和 Go 版本、工作区目录结构，以及 **Golang External Libraries** 输出面板中的相关日志。
 
 [提交问题](https://github.com/mooonfly/go-external-libraries/issues)
 

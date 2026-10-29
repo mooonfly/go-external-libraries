@@ -50,7 +50,7 @@ class Libraries {
         } else children.push({ kind: 'message', label: 'No go.mod or go.work in this folder' });
       } catch (error) {
         this.output.appendLine(`[${folder.name}] ${error.message}`);
-        children.push({ kind: 'message', label: 'Unable to load libraries — see Go External Libraries output', detail: error.message });
+        children.push({ kind: 'message', label: 'Unable to load libraries — see Golang External Libraries output', detail: error.message });
       }
       return { kind: 'group', label: folder.name, children };
     }));
@@ -158,7 +158,7 @@ async function download(provider) {
 }
 
 function activate(context) {
-  const output = vscode.window.createOutputChannel('Go External Libraries');
+  const output = vscode.window.createOutputChannel('Golang External Libraries');
   const provider = new Libraries(output);
   provider.view = vscode.window.createTreeView('goExternalLibraries', { treeDataProvider: provider, showCollapseAll: true });
   const watcher = vscode.workspace.createFileSystemWatcher('**/{go.mod,go.sum,go.work,go.work.sum}');
